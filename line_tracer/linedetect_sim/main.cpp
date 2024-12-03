@@ -1,4 +1,3 @@
-#카메라로 라인검출
 #include "opencv2/opencv.hpp"
 #include <iostream>
 #include <cmath>
