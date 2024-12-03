@@ -109,7 +109,3 @@ https://github.com/smHan22/smart-vision/blob/76225e5e26c2b183d94aceba822725a938d
 
 ● 실행 시간 및 에러를 출력합니다.
 ```
-
-# 실행영상
-
-https://youtu.be/2eD7gTxhmKs?si=PUimid_hVY_-uPBy
