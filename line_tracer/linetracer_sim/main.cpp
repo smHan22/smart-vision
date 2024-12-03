@@ -1,3 +1,4 @@
+#카메라로 제어
 #include "opencv2/opencv.hpp"
 #include <iostream>
 #include "dxl.hpp"
