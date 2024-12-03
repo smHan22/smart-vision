@@ -1,9 +1,10 @@
-# Jetson 환경
-
 #include "opencv2/opencv.hpp"
 #include <iostream>
 #include <cmath>
+#include <unistd.h>
 #include <sys/time.h>
+#include <sys/time.h>
+#include <signal.h>
 using namespace cv;
 using namespace std;
 
@@ -16,9 +17,6 @@ int main() {
         return -1;
     }
 
-    double fps = cap.get(CAP_PROP_FPS);
-    int delay = cvRound(1000 / fps);
-
     string dst1 = "appsrc ! videoconvert ! video/x-raw, format=BGRx ! \
     nvvidconv ! nvv4l2h264enc insert-sps-pps=true ! h264parse ! \
     rtph264pay pt=96 ! udpsink host=203.234.58.163 port=8001 sync=false";
@@ -26,8 +24,8 @@ int main() {
     nvvidconv ! nvv4l2h264enc insert-sps-pps=true ! h264parse ! \
     rtph264pay pt=96 ! udpsink host=203.234.58.163 port=8002 sync=false";
 
-    VideoWriter writer1(dst1, 0, fps, Size(640, 360), true);
-    VideoWriter writer2(dst2, 0, fps, Size(640, 90), true);
+    VideoWriter writer1(dst1, 0, 30, Size(640, 360), true);
+    VideoWriter writer2(dst2, 0, 30, Size(640, 90), true);
 
     if (!writer1.isOpened() || !writer2.isOpened()) {
         cerr << "Error: Unable to open GStreamer writers!" << endl;
@@ -38,9 +36,8 @@ int main() {
     Point previousCenter(-1, -1);  // 이전 중심점을 저장할 변수
     bool firstFrame = true;  // 첫 번째 프레임을 처리하는지 여부
     const double MAX_DISTANCE = 100.0;  // 라인 후보 간의 최대 허용 거리
+    const int targetDelayMs = 30;
     struct timeval start, end1;
-    double diff1;
-    double error = 0.0;  // error 값을 처음에 0으로 초기화
     while (true) {
         gettimeofday(&start, NULL);
 
@@ -97,8 +94,6 @@ int main() {
             rectangle(colorBinary, Rect(closestCenter.x - 10, closestCenter.y - 10, 20, 20), Scalar(0, 0, 255), 2);
             circle(colorBinary, closestCenter, 5, Scalar(0, 0, 255), -1);
 
-            error = centerOfImage.x - closestCenter.x;  // 영상의 중심과 라인의 중심 x좌표 차이
-
             previousCenter = closestCenter;     // 현재 찾은 가장 가까운 중심점을 저장하여, 다음 프레임에서 이 중심점을 기준으로 라인을 추적할 수 있도록 함
             firstFrame = false;
         }
@@ -123,22 +118,21 @@ int main() {
                 rectangle(colorBinary, Rect(previousCenter.x - 10, previousCenter.y - 10, 20, 20), Scalar(0, 0, 255), 2);       // 빨간색 바운딩 박스
                 circle(colorBinary, previousCenter, 5, Scalar(0, 0, 255), -1);      // 원 그림
             }
-
-            // error 값도 갱신
-            Point centerOfImage(frame.cols / 2, frame.rows / 2);     // 이미지의 중앙 좌표를 계산
-            error = centerOfImage.x - closestCenter.x;  // 영상의 중심과 라인의 중심 x좌표 차이
         }
 
         writer1 << frame;       // 원본 동영상 프레임
         writer2 << colorBinary;
 
-        if (waitKey(delay) == 27) {
-            break;
-        }
+        gettimeofday(&end1, NULL); // 작업 끝난 시간 측정s
+        double elapsedMs = (end1.tv_sec - start.tv_sec) * 1000.0 + (end1.tv_usec - start.tv_usec) / 1000.0;
 
-        gettimeofday(&end1, NULL);
-        diff1 = end1.tv_sec + end1.tv_usec / 1000000.0 - start.tv_sec - start.tv_usec / 1000000.0;
-        cout << "error: " << error << ", " << "time: " << diff1 << endl;
+        int sleepMs = targetDelayMs - static_cast<int>(elapsedMs); // 남은 시간 계산
+        if (sleepMs > 0) {
+            usleep(sleepMs * 1000); // ms를 us 단위로 변환 후 sleep
+        }
+        double totalTime = elapsedMs + sleepMs;
+
+        cout << "time: " << totalTime << endl;
     }
     cap.release();
     return 0;
