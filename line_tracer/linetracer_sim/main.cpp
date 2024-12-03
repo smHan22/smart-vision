@@ -14,9 +14,14 @@ void ctrlc(int)
     ctrl_c_pressed = true;
 }
 int main() {
-    string videoPath = "/home/jetson/workspace/line_tracer/simulation/7_lt_ccw_100rpm_in.mp4";
+    string videoPath = "nvarguscamerasrc sensor-id=0 ! \
+        video/x-raw(memory:NVMM), width=(int)640, height=(int)360, \
+        format=(string)NV12, framerate=(fraction)30/1 ! \
+        nvvidconv flip-method=0 ! video/x-raw, \
+        width=(int)640, height=(int)360, format=(string)BGRx ! \
+        videoconvert ! video/x-raw, format=(string)BGR ! appsink";
 
-    VideoCapture cap(videoPath);
+    VideoCapture cap(videoPath, CAP_GSTREAMER);
     if (!cap.isOpened()) {
         cerr << "Error: Unable to open video file!" << endl;
         return -1;
@@ -42,7 +47,7 @@ int main() {
     const double MAX_DISTANCE = 100.0;  // 라인 후보 간의 최대 허용 거리
     struct timeval start, end1;
     double error = 0.0;  // error 값을 처음에 0으로 초기화
-    double k = 0.3;
+    double k = 0.165;
     bool mode = false;
     const int targetDelayMs = 30; // 고정된 딜레이 30ms
     if (!dxl.open()) { 
