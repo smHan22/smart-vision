@@ -6,6 +6,15 @@ https://youtu.be/uSDSKUINZIs
 
 ➨ 지난 시간 라인 검출에 이어서 검출한 라인과 위치오차를 이용하여 속도명령을 설계하는 것을 설명하겠습니다.
 
+# main.cpp
+
+# vision.cpp
+
+#vision.hpp
+
+# Makefile
+
+
 ⦁ 모터와 연결
 
 https://github.com/smHan22/smart-vision/blob/050106fa565d134d256f365c2debadaf6123141e/line_tracer/linetracer_sim/main.cpp#L48-L51
