@@ -49,6 +49,15 @@ https://github.com/smHan22/smart-vision/blob/ee9d902bbc08834a76789637743c26d6b04
 ⦁ dxl.kbhit()으로 키 입력을 체크하여 'q'를 입력하면 종료하고, 's'를 입력하면 모터를 작동시킴
 ⦁ ctrl_c_pressed가 ture이면 프로그램을 종료
 ```
+
+https://github.com/smHan22/smart-vision/blob/9bb1e22e26532ce5f4e24f7536c6b83a504f5fcc/line_tracer/linetracer_sim/main.cpp#L89-L103
+
+```ruby
+⦁ elapsedMs: 처리된 시간 (프레임 처리 시간)을 밀리초 단위로 계산.
+⦁ (end1.tv_sec - start.tv_sec) * 1000.0: 초 단위로 측정된 시간을 밀리초로 변환.
+tv_sec는 초를 나타내며 이를 밀리초로 변환하려면 1000을 곱함
+⦁ (end1.tv_usec - start.tv_usec) / 1000.0: 마이크로초 단위이므로 이를 1000으로 나누어 밀리초로 변환
+```
 # vision.cpp
 
 # vision.hpp
