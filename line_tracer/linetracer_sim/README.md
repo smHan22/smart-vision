@@ -21,6 +21,19 @@ https://github.com/smHan22/smart-vision/blob/b9d233199fa51126f15032b0a4ecd5edeaf
 ⦁ DXL 모터를 제어하기 위해 DXL 객체를 생성하고, dxl.open()을 통해 모터가 열리지 않으면 오류 메시지를 출력하고 종료
 ```
 
+https://github.com/smHan22/smart-vision/blob/5b33bc9dc7cc3d043d072c3cf14f4ede4e337a1b/line_tracer/linetracer_sim/main.cpp#L48-L55
+
+```ruby
+⦁ frame: 현재 비디오 프레임을 저장할 Mat 객체
+⦁ binary, colorBinary: 이진화된 이미지와 컬러 이진화 이미지
+⦁ previousCenter: 이전에 계산된 중심점
+⦁ error: 라인 추적에서 발생하는 에러 값
+⦁ firstFrame: 첫 번째 프레임인지 확인하는 변수
+⦁ mode: 모터 작동 상태
+⦁ targetDelayMs: 목표 프레임 지연 시간
+⦁ MAX_DESTANCE: 라인 후보 간의 최대 거리
+⦁ k: 보정 계수 (게인 값)
+```
 # vision.cpp
 
 # vision.hpp
