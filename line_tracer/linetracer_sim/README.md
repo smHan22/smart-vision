@@ -15,6 +15,12 @@ https://github.com/smHan22/smart-vision/blob/ad8bba96dd0172ba8d949c0e0e9f5791d2f
 ⦁ ctrlc: 시그널 처리 함수로, Ctrl+c가 눌리면 ctrl_c_pressed를 true로 설정
 ```
 
+https://github.com/smHan22/smart-vision/blob/b9d233199fa51126f15032b0a4ecd5edeaf8e79a/line_tracer/linetracer_sim/main.cpp#L42-L46
+
+```ruby
+⦁ DXL 모터를 제어하기 위해 DXL 객체를 생성하고, dxl.open()을 통해 모터가 열리지 않으면 오류 메시지를 출력하고 종료
+```
+
 # vision.cpp
 
 # vision.hpp
