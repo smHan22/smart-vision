@@ -8,6 +8,13 @@ https://youtu.be/uSDSKUINZIs
 
 # main.cpp
 
+https://github.com/smHan22/smart-vision/blob/ad8bba96dd0172ba8d949c0e0e9f5791d2fb3ff2/line_tracer/linetracer_sim/main.cpp#L12-L17
+
+```ruby
+⦁ ctrl_c_pressed: Ctrl+c가 눌렸는지 확인하는 변수
+⦁ ctrlc: 시그널 처리 함수로, Ctrl+c가 눌리면 ctrl_c_pressed를 true로 설정
+```
+
 # vision.cpp
 
 # vision.hpp
