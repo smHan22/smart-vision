@@ -34,6 +34,13 @@ https://github.com/smHan22/smart-vision/blob/5b33bc9dc7cc3d043d072c3cf14f4ede4e3
 ⦁ MAX_DESTANCE: 라인 후보 간의 최대 거리
 ⦁ k: 보정 계수 (게인 값)
 ```
+
+https://github.com/smHan22/smart-vision/blob/52e3232308865dd5351182656d5879251bb6bd85/line_tracer/linetracer_sim/main.cpp#L69-L72
+
+```ruby
+⦁ 비디오에서 프레임을 읽고, preprocessFrame함수를 사용하여 전처리 및 이진화를 수행
+⦁ calculateError 함수로 라인의 중심을 계산하고 에러 값을 업데이트
+```
 # vision.cpp
 
 # vision.hpp
