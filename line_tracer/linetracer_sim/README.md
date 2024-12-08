@@ -57,6 +57,11 @@ https://github.com/smHan22/smart-vision/blob/9bb1e22e26532ce5f4e24f7536c6b83a504
 ⦁ (end1.tv_sec - start.tv_sec) * 1000.0: 초 단위로 측정된 시간을 밀리초로 변환.
 tv_sec는 초를 나타내며 이를 밀리초로 변환하려면 1000을 곱함
 ⦁ (end1.tv_usec - start.tv_usec) / 1000.0: 마이크로초 단위이므로 이를 1000으로 나누어 밀리초로 변환
+⦁ sleepMs: 목표 지연 시간에서 실제 처리 시간을 빼서, 추가로 기다려야 할 시간을 계산
+static_cast<int>(dlapsedMs)는 elapsedMs를 정수형으로 변환하여 사용
+⦁ usleep(sleepMs * 1000): sleepMs는 밀리초 단위이므로, 이를 마이크로초 단위로 변환하려면 1000을 곱함.
+usleep 함수는 마이크로초 단위로 대기하기 때문에 이 값을 인자로 전달.
+⦁ totalTime: 실제 처리 시간과 대기 시간을 더한 총 소요 시간을 계산.
 ```
 # vision.cpp
 
