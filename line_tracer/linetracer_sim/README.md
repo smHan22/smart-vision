@@ -144,6 +144,24 @@ https://github.com/smHan22/smart-vision/blob/02d4efdcbd69729fc990d64b8b383760c73
 ⦁ 가장 가까운 중심점을 previousCenter에 저장하고, firstFrame을 flase로 설정하여 이후에는 이 조건문을 실행하지 않도록 설정
 ```
 
+https://github.com/smHan22/smart-vision/blob/a103774308910c37769c17daa736f77dc6747261/line_tracer/linetracer_sim/vision.cpp#L71-L97
+
+```ruby
+⦁ else if(previousCenter.x != -1 && !lineCenters.empty()) : 이전 중심점이 있고, 현재 프레임에서
+탐지된 중심점이 하나 이상 존재하는지 확인
+
+⦁ distance : 현재 중심점과 이전 중심점간의 거리
+
+⦁ if (distance < minDistance && distance < maxDistance) : 현재 중심점이 가장 가까운 거리인지,
+최대 거리 안에 있는지 확인
+
+⦁ if(minDistance < maxDistance) : 유효 거리 안에서 중심점을 찾았을 경우, 빨간색 바운딩 박스와 원을 그림
+previousCenter를 업데이트
+
+⦁ else : 유효한 중심점이 발견되지 않을 경우 (라인이 화면에서 사라진 경우)
+이전 중심점을 빨간색 바운딩 박스와 원으로 표시
+```
+
 # vision.hpp
 
 # Makefile
