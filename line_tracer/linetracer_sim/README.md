@@ -192,7 +192,17 @@ double error : 이미지 중심점과 탐지된 중심점 간 x축 방향의 거
 https://github.com/smHan22/smart-vision/blob/3c0a215444c069e2bf0cbc06ca37f6e3d3468c40/line_tracer/linetracer_sim/Makefile#L1-L7
 
 ```ruby
+⦁ CX : 사용할 컴파일러를 지정
 
+⦁ CXFLAGS : 컴파일 시 사용할 플래그 옵션
+
+⦁ DXLFLAGS : Dynamixel SDK 관련 플래그
+
+⦁ CVFLAGS : OpenCV 라이브러리를 사용하기 위한 플래그
+
+⦁ TARGET : 빌드된 최종 실행 파일의 이름
+
+⦁ OBJS : 빌드에 필요한 오브젝트 파일 목록
 ```
 
 https://github.com/smHan22/smart-vision/blob/de1e00b2ea3e97cdb3392d546fb1bc6ceb978559/line_tracer/linetracer_sim/Makefile#L9-L10
