@@ -120,6 +120,30 @@ centroids.at<double>(i, 1> : i번째 레이블의 y좌표
 
 ```
 
+https://github.com/smHan22/smart-vision/blob/02d4efdcbd69729fc990d64b8b383760c737445f/line_tracer/linetracer_sim/vision.cpp#L45-L69
+
+```ruby
+⦁ if (firstFrame && !lineCenters.empty()): 현재 첫 번째 프레임인지 확인, 탐지한 라인의 중심점이 하나 이상 존재하는지
+
+⦁ Point centerOfImage(binary.cols / 2, binary.rows / 2) : 이미지의 정중앙을 계산
+
+⦁ minDistance : 표현 가능한 가장 큰 실수 값으로 초기화하여 발견되는 거리 값이 항상 초기값보다 작아지도록 설정
+
+⦁ closestCenter : 가장 가까운 중심점을 저장할 변수
+
+⦁ for (size_t i = 0; i < lineCenters.size(); i++) : 탐지된 모든 라인의 중심점을 순회
+
+⦁ distance : 두 점 간의 유클리드 거리를 계산
+
+⦁ if(distance < minDistance) : 현재 계산된 거리가 최소 거리보다 작은지 확인.
+
+⦁ 가장 가까운 중심점 주변에 빨간색 바운딩 박스와 원을 그림
+
+⦁ error = centerOfImage.x - closestCenter.x : 에러 값 계산
+
+⦁ 가장 가까운 중심점을 previousCenter에 저장하고, firstFrame을 flase로 설정하여 이후에는 이 조건문을 실행하지 않도록 설정
+```
+
 # vision.hpp
 
 # Makefile
