@@ -12,6 +12,7 @@ https://github.com/smHan22/smart-vision/blob/ad8bba96dd0172ba8d949c0e0e9f5791d2f
 
 ```ruby
 ⦁ ctrl_c_pressed: Ctrl+c가 눌렸는지 확인하는 변수
+
 ⦁ ctrlc: 시그널 처리 함수로, Ctrl+c가 눌리면 ctrl_c_pressed를 true로 설정
 ```
 
@@ -25,13 +26,21 @@ https://github.com/smHan22/smart-vision/blob/5b33bc9dc7cc3d043d072c3cf14f4ede4e3
 
 ```ruby
 ⦁ frame: 현재 비디오 프레임을 저장할 Mat 객체
+
 ⦁ binary, colorBinary: 이진화된 이미지와 컬러 이진화 이미지
+
 ⦁ previousCenter: 이전에 계산된 중심점
+
 ⦁ error: 라인 추적에서 발생하는 에러 값
+
 ⦁ firstFrame: 첫 번째 프레임인지 확인하는 변수
+
 ⦁ mode: 모터 작동 상태
+
 ⦁ targetDelayMs: 목표 프레임 지연 시간
+
 ⦁ MAX_DESTANCE: 라인 후보 간의 최대 거리
+
 ⦁ k: 보정 계수 (게인 값)
 ```
 
@@ -39,6 +48,7 @@ https://github.com/smHan22/smart-vision/blob/52e3232308865dd5351182656d5879251bb
 
 ```ruby
 ⦁ 비디오에서 프레임을 읽고, preprocessFrame함수를 사용하여 전처리 및 이진화를 수행
+
 ⦁ calculateError 함수로 라인의 중심을 계산하고 에러 값을 업데이트
 ```
 
@@ -46,7 +56,9 @@ https://github.com/smHan22/smart-vision/blob/ee9d902bbc08834a76789637743c26d6b04
 
 ```ruby
 ⦁ 라인의 중심점을 기준으로 왼쪽 및 오른쪽 모터의 속도를 계산
+
 ⦁ dxl.kbhit()으로 키 입력을 체크하여 'q'를 입력하면 종료하고, 's'를 입력하면 모터를 작동시킴
+
 ⦁ ctrl_c_pressed가 ture이면 프로그램을 종료
 ```
 
@@ -54,13 +66,18 @@ https://github.com/smHan22/smart-vision/blob/9bb1e22e26532ce5f4e24f7536c6b83a504
 
 ```ruby
 ⦁ elapsedMs: 처리된 시간 (프레임 처리 시간)을 밀리초 단위로 계산.
+
 ⦁ (end1.tv_sec - start.tv_sec) * 1000.0: 초 단위로 측정된 시간을 밀리초로 변환.
 tv_sec는 초를 나타내며 이를 밀리초로 변환하려면 1000을 곱함
+
 ⦁ (end1.tv_usec - start.tv_usec) / 1000.0: 마이크로초 단위이므로 이를 1000으로 나누어 밀리초로 변환
+
 ⦁ sleepMs: 목표 지연 시간에서 실제 처리 시간을 빼서, 추가로 기다려야 할 시간을 계산
 static_cast<int>(dlapsedMs)는 elapsedMs를 정수형으로 변환하여 사용
+
 ⦁ usleep(sleepMs * 1000): sleepMs는 밀리초 단위이므로, 이를 마이크로초 단위로 변환하려면 1000을 곱함.
 usleep 함수는 마이크로초 단위로 대기하기 때문에 이 값을 인자로 전달.
+
 ⦁ totalTime: 실제 처리 시간과 대기 시간을 더한 총 소요 시간을 계산.
 ```
 # vision.cpp
@@ -81,10 +98,27 @@ https://github.com/smHan22/smart-vision/blob/0e99677ebac2ff846c6e7ad6dd4c12d6e3b
 
 ```ruby
 ⦁ labelImage: 각 픽셀의 레이블
+
 ⦁ stats: 각 연결 컴포넌트의 바운딩 박스 정보
+
 ⦁ centroids: 각 컴포넌트의 중심점
 ```
 
+https://github.com/smHan22/smart-vision/blob/1ea1e7208bd5d5d5ebab56b3cbb055cea4b48ba0/line_tracer/linetracer_sim/vision.cpp#L29-L43
+
+```ruby
+⦁ vector<Point> lineCenters: 각 영역의 중심점을 저장할 벡터
+
+⦁ center: 현재 영역의 중심점을 계산
+centriuds는 각 레이블의 중심 좌표를 담고 있는 행렬
+centroids.at<double>(i, 0> : i번째 레이블의 x좌표
+centroids.at<double>(i, 1> : i번째 레이블의 y좌표
+
+⦁ lineCenters.push_back(center) : 계산한 중심점을 lineCenters 백터에 추가
+
+⦁ 영역에 바운딩 박스와 바운딩 박스의 중심점에 파란색으로 원을 그림
+
+```
 
 # vision.hpp
 
