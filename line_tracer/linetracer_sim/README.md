@@ -65,6 +65,12 @@ usleep 함수는 마이크로초 단위로 대기하기 때문에 이 값을 인
 ```
 # vision.cpp
 
+https://github.com/smHan22/smart-vision/blob/0284e87ec10ae1f4fcf2e07bcbf64baf8db1f9db/line_tracer/linetracer_sim/vision.cpp#L3
+
+```ruby
+⦁ 비디오 프레임을 전처리하는 함수 (그레이스케일 변환, 밝기 보정, 크기 설정, 이진화 등)
+```
+
 
 
 
