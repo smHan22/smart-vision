@@ -77,6 +77,14 @@ https://github.com/smHan22/smart-vision/blob/947786a83a5b8034b814f7905264827f28c
 ⦁ 이진화된 이미지에서 연결된 객체를 찾고, 라인의 중심을 계산하여 오류 값을 반환하는 함수
 ```
 
+https://github.com/smHan22/smart-vision/blob/0e99677ebac2ff846c6e7ad6dd4c12d6e3b17619/line_tracer/linetracer_sim/vision.cpp#L25-L27
+
+```ruby
+⦁ labelImage: 각 픽셀의 레이블
+⦁ stats: 각 연결 컴포넌트의 바운딩 박스 정보
+⦁ centroids: 각 컴포넌트의 중심점
+```
+
 
 # vision.hpp
 
