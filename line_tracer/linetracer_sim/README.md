@@ -71,7 +71,11 @@ https://github.com/smHan22/smart-vision/blob/0284e87ec10ae1f4fcf2e07bcbf64baf8db
 ⦁ 비디오 프레임을 전처리하는 함수 (그레이스케일 변환, 밝기 보정, 크기 설정, 이진화 등)
 ```
 
+https://github.com/smHan22/smart-vision/blob/947786a83a5b8034b814f7905264827f28c610ea/line_tracer/linetracer_sim/vision.cpp#L24-L25
 
+```ruby
+⦁ 이진화된 이미지에서 연결된 객체를 찾고, 라인의 중심을 계산하여 오류 값을 반환하는 함수
+```
 
 
 # vision.hpp
