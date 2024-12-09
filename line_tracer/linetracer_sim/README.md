@@ -166,7 +166,7 @@ previousCenter를 업데이트
 
 # vision.hpp
 
-https://github.com/smHan22/smart-vision/blob/e9ed0e88fe6adf3fae58260a4fa9094c21c4cc4b/line_tracer/linetracer_sim/vision.hpp#L1-L16
+https://github.com/smHan22/smart-vision/blob/3c0a215444c069e2bf0cbc06ca37f6e3d3468c40/line_tracer/linetracer_sim/Makefile#L1-L7
 
 ```ruby
 ⦁ #ifndef VISION_HPP와 #define VISION_HPP : 헤더 파일이 중복으로 포함되는 것을 방지
