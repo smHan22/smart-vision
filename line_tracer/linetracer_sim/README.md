@@ -170,11 +170,20 @@ https://github.com/smHan22/smart-vision/blob/0ed9f403415e5337f095b250f3bc26ebcc0
 ```ruby
 ⦁ #ifndef VISION_HPP와 #define VISION_HPP : 헤더 파일이 중복으로 포함되는 것을 방지
 
-⦁ #include "opencv2/opencv.hpp"와 #include <vector>
-OpenCV 라이브러리와 STL의 vector를 포함
+⦁ #include "opencv2/opencv.hpp"와 #include <vector> : opencv 라이브러리와 STL의 vector를 포함
 
 ⦁ void preprocessFrame(const Mat& frame, Mat& binary, Mat& colorBinary) : 함수 선언
+const Mat& frame : 입력 프레임
+Mat& binary : 출력 이진화 영상
+Mat& colorBinary : 출력 컬러 이진화 영상
 
+⦁ double calculateError(const Mat& binary, Mat& colorBinary, Point& previousCenter, bool& firstFrame, double maxDistance, double error) : 함수 선언
+const May& binary : 입력 이진화 영상
+Mat& colorBinary : 출력 컬러 이진화 영상
+Point& previousCenter : 이전 프레임에서의 중심점 좌표
+bool& firstFrame : 첫 프레임인지 여부를 확인하는 플래그
+double maxDistance : 중심점 간 유효 거리
+double error : 이미지 중심점과 탐지된 중심점 간 x축 방향의 거리 오차
 ```
 
 
@@ -183,16 +192,7 @@ OpenCV 라이브러리와 STL의 vector를 포함
 https://github.com/smHan22/smart-vision/blob/3c0a215444c069e2bf0cbc06ca37f6e3d3468c40/line_tracer/linetracer_sim/Makefile#L1-L7
 
 ```ruby
-⦁ #ifndef VISION_HPP와 #define VISION_HPP : 헤더 파일이 중복으로 포함되는 것을 방지
 
-⦁ #include "opencv2/opencv.hpp"와 #include <vector> : opencv 라이브러리와 STL의 vector를 포함
-
-⦁ void preprocessFrame(const Mat& frame, Mat& binary, Mat& colorBinary) : 함수 선언
-const Mat& frame : 입력 프레임
-Mat& binary : 출력 이진화 영상
-Mat& colorBinary : 출력 컬러 이진화 영상
-
-⦁ double calculateError(const Mat& binary, Mat& colorBinary, Point& previousCent록
 ```
 
 https://github.com/smHan22/smart-vision/blob/de1e00b2ea3e97cdb3392d546fb1bc6ceb978559/line_tracer/linetracer_sim/Makefile#L9-L10
