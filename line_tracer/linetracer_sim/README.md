@@ -186,3 +186,13 @@ https://github.com/smHan22/smart-vision/blob/de1e00b2ea3e97cdb3392d546fb1bc6ceb9
 ```ruby
 ⦁ TARGET을 생성 (main.o, dxl.o, vision.o를 링크하여 moter_sim이라는 실행 파일 생성)
 ```
+
+https://github.com/smHan22/smart-vision/blob/7f1731ade56bddf624dc772a71dd59ab12aa7fef/line_tracer/linetracer_sim/Makefile#L12-L19
+
+```ruby
+⦁ main.o : main.cpp를 컴파일하여 오브젝트 파일 생성
+
+⦁ dxl.o : dxl.cpp를 컴파일하여 dxl.o 생성
+
+⦁ vision.o : vision.cpp를 컴파일하여 vision.o 생성
+```
