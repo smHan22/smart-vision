@@ -165,7 +165,17 @@ previousCenter를 업데이트
 ```
 # vision.hpp
 
+https://github.com/smHan22/smart-vision/blob/0ed9f403415e5337f095b250f3bc26ebcc0616c3/line_tracer/linetracer_sim/vision.hpp#L1-L16
 
+```ruby
+⦁ #ifndef VISION_HPP와 #define VISION_HPP : 헤더 파일이 중복으로 포함되는 것을 방지
+
+⦁ #include "opencv2/opencv.hpp"와 #include <vector>
+OpenCV 라이브러리와 STL의 vector를 포함
+
+⦁ void preprocessFrame(const Mat& frame, Mat& binary, Mat& colorBinary) : 함수 선언
+
+```
 
 
 # Makefile
