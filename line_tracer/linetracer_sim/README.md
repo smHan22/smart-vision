@@ -164,7 +164,7 @@ previousCenter를 업데이트
 이전 중심점을 빨간색 바운딩 박스와 원으로 표시
 ```
 
-# vision.hpp
+# Makefile
 
 https://github.com/smHan22/smart-vision/blob/3c0a215444c069e2bf0cbc06ca37f6e3d3468c40/line_tracer/linetracer_sim/Makefile#L1-L7
 
@@ -195,4 +195,12 @@ https://github.com/smHan22/smart-vision/blob/7f1731ade56bddf624dc772a71dd59ab12a
 ⦁ dxl.o : dxl.cpp를 컴파일하여 dxl.o 생성
 
 ⦁ vision.o : vision.cpp를 컴파일하여 vision.o 생성
+```
+
+https://github.com/smHan22/smart-vision/blob/ea3010f4b34b136657083e8bc2b7444bb2043010/line_tracer/linetracer_sim/Makefile#L21-L23
+
+```ruby
+⦁ clean은 실제 파일 이름이 아니므로, 이를 유틸리티 타겟으로 설정
+
+⦁ 빌드된 실행 파일 삭제하는 명령어
 ```
