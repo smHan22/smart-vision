@@ -164,6 +164,27 @@ previousCenter를 업데이트
 
 # vision.hpp
 
+https://github.com/smHan22/smart-vision/blob/e9ed0e88fe6adf3fae58260a4fa9094c21c4cc4b/line_tracer/linetracer_sim/vision.hpp#L1-L16
+
+```ruby
+⦁ #ifndef VISION_HPP와 #define VISION_HPP : 헤더 파일이 중복으로 포함되는 것을 방지
+
+⦁ #include "opencv2/opencv.hpp"와 #include <vector> : opencv 라이브러리와 STL의 vector를 포함
+
+⦁ void preprocessFrame(const Mat& frame, Mat& binary, Mat& colorBinary) : 함수 선언
+const Mat& frame : 입력 프레임
+Mat& binary : 출력 이진화 영상
+Mat& colorBinary : 출력 컬러 이진화 영상
+
+⦁ double calculateError(const Mat& binary, Mat& colorBinary, Point& previousCenter, bool& firstFrame,
+ double maxDistance, double error) : 함수 선언
+const Mat& binary : 입력 이진화 영상
+Mat& colorBinary : 출력 컬러 이진화 영상
+Point& previousCenter : 이전 프레임에서의 중심점 좌표
+bool& firstFrame: 첫 프레임인지 여부를 나타내는 플래그
+double maxDistance : 중심점 간 유효 거리
+double error : 이미지 중심선과 탐지된 중심점 간 x축 방향의 거리 오차
+```
 # Makefile
 
 
