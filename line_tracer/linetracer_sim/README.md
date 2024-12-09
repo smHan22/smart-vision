@@ -60,6 +60,8 @@ https://github.com/smHan22/smart-vision/blob/ee9d902bbc08834a76789637743c26d6b04
 ⦁ dxl.kbhit()으로 키 입력을 체크하여 'q'를 입력하면 종료하고, 's'를 입력하면 모터를 작동시킴
 
 ⦁ ctrl_c_pressed가 ture이면 프로그램을 종료
+
+⦁ dxl.setVelocity(leftvel, rightvel)은 계산된 속도를 기반으로 모터를 제어하여 방향 및 이동 속도를 설정.
 ```
 
 https://github.com/smHan22/smart-vision/blob/9bb1e22e26532ce5f4e24f7536c6b83a504f5fcc/line_tracer/linetracer_sim/main.cpp#L89-L103
