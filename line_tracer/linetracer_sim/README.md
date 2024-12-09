@@ -179,4 +179,10 @@ Mat& binary : 출력 이진화 영상
 Mat& colorBinary : 출력 컬러 이진화 영상
 
 ⦁ double calculateError(const Mat& binary, Mat& colorBinary, Point& previousCent록
-``` 
+```
+
+https://github.com/smHan22/smart-vision/blob/de1e00b2ea3e97cdb3392d546fb1bc6ceb978559/line_tracer/linetracer_sim/Makefile#L9-L10
+
+```ruby
+⦁ TARGET을 생성 (main.o, dxl.o, vision.o를 링크하여 moter_sim이라는 실행 파일 생성)
+```
