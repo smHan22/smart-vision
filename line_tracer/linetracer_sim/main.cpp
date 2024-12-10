@@ -64,16 +64,10 @@ int main() {
             cerr << "Error: Empty frame received!" << endl;
             break;
         }
-
-        // 1. 전처리 및 이진화
+        
         preprocessFrame(frame, binary, colorBinary);
 
-        // 2. 라인 중심 계산 및 에러 값 업데이트
         error = calculateError(binary, colorBinary, previousCenter, firstFrame, MAX_DISTANCE, error);
-
-        // 속도 계산
-        double leftVel = 100 - k * error;
-        double rightVel = -(100 + k * error);
 
         if(dxl.kbhit())
         {
@@ -81,9 +75,10 @@ int main() {
             if(ch == 'q') break;
             else if(ch == 's') {mode = true; cout << "moter on!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;}
         }
+
         if(ctrl_c_pressed) break;
-        leftVel = 100 - k* error;
-        rightVel = -(100 + k* error);
+        double leftVel = 100 - k* error;
+        double rightVel = -(100 + k* error);
         if(mode) dxl.setVelocity(leftVel, rightVel);
 
         writer1 << frame;
