@@ -1,10 +1,8 @@
-# 동작 영상
-
-https://youtu.be/VNe0moYWk3M
-
 # 라인 검출
 
 ➩ 비디오 파일에서 프레임을 읽고, 특정 관심 영역에서 라인을 추적하여 객체 중심점을 계산한 뒤, 결과를 두 개의 스트림으로 전송하는 프로그램입니다.
+
+# main.cpp
 
 https://github.com/smHan22/smart-vision/blob/f372cbe151428829943ed32c1621077622cab18c/line_tracer/main.cpp#L11-L20
 
@@ -110,3 +108,7 @@ https://github.com/smHan22/smart-vision/blob/76225e5e26c2b183d94aceba822725a938d
 
 ● 실행 시간 및 에러를 출력합니다.
 ```
+
+# 동작 영상
+
+https://youtu.be/VNe0moYWk3M
