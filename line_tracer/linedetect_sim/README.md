@@ -142,6 +142,15 @@ https://github.com/smHan22/smart-vision/blob/6f146509e3370d899aa5e7d9e9562cd2aa6
 
 ● $(CVFLAGS) : OpenCV 관련 헤더 및 라이브러리 설정을 추가
 ```
+
+https://github.com/smHan22/smart-vision/blob/02c0ac5d09e3346a89fedf4a221b1ed3e48c8ca0/line_tracer/linedetect_sim/Makefile#L10-L12
+
+```ruby
+● .PHONY: clean : clean은 실제 파일 이름이 아니라 규칙임을 나타냄
+
+● clean : $(OBJS) 객체 파일들을 삭제하는데 이 Makefile에서는 OBJS가 정의되어 있지 않으므로 영향이 없음
+실행 파일인 camera를 삭제
+```
 # 동작 영상
 
 https://youtu.be/VNe0moYWk3M
