@@ -74,3 +74,37 @@ https://github.com/smHan22/smart-vision/blob/47c4404289fae067b3a2ccfa4127a901574
 
     - calculateError : 중심점 및 에러 계산
 ```
+
+# < dxl.cpp >
+
+https://github.com/smHan22/smart-vision/blob/f0f8632b0f4e3c64ed70bce70dd83025d3629a14/line_tracer/linetracer_real/dxl.cpp#L1-L606
+
+```
+⦁ 주요 기능 설명
+
+  1. getch 함수
+
+    - 사용자가 키 입력을 받는 함수입니다. 터미널에서 비차단 방식으로 키 입력을 감지합니다.
+
+  2. kbhit 함수
+
+    - getch 함수와 유사하지만, 입력이 없으면 바로 false를 반환하고, 입력이 있으면 true를 반환합니다.
+
+  3. open 함수
+
+    - 포트를 열고, 보드 레이트를 설정한 뒤, Dynamixel 모터에 토크를 활성화하여 연결을 설정합니다. 이때, 두 개의 모터에 대해 토크를 활성화합니다.
+
+  4. close 함수
+
+    - 모터의 속도를 0으로 설정하여 멈추고, 연결된 Dynamixel 모터의 토크를 비활성화한 후 포트를 닫습니다.
+
+  5. setVelocity 함수
+
+    - 목표 RPM 값을 받아서 해당 속도로 두 개의 Dynamixel 모터를 동기화하여 제어합니다.
+
+    - 각 모터에 대해 목표 속도를 설정하고, 이를 GroupSyncWrite를 사용하여 동시에 전송합니다.
+
+  6. velConvert 함수
+
+    - RPM 값을 Dynamixel이 사용하는 속도 값으로 변환합니다.
+```
