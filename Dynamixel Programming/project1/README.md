@@ -15,7 +15,7 @@
 
 • 무한 루프 안에서 계속 실행되며, Ctrl+c가 입력되면, ctrl_c_pressed플래그가 true로 설정되어 루프가 종료되고, 이 시점에서 모터 제어를 위한 장치 연결이 끊어지고, mx.close()가 호출되어 장치가 닫히게 됨.
 ```
-# Makefile 설정
+# Makefile
 
 • Makefile은 프로젝트의 빌드 과정을 자동화하는 파일로, 여러 파일이 포함된 프로젝트를 쉽게 컴파일하고 관리할 수 있도록 함.
 
@@ -37,7 +37,7 @@ https://github.com/smHan22/smart-vision/blob/737707ae92b0c697ed4b5529743b4d9e723
 
 • $(CX) $(CXFLAGS) -c dxl.cpp $(DXLFLAGS): dxl.cpp 파일을 컴파일하여 dxl.o 객체 파일을 생성.
 ```
-# main.cpp 코드
+# main.cpp
 
 • main.cpp로 Dynamixel 모터를 제어하고, 사용자가 입력한 속도로 모터를 제어하면서 실행 시간을 출력하는 프로그램.
 
