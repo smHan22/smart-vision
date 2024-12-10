@@ -111,8 +111,28 @@ https://github.com/smHan22/smart-vision/blob/f0f8632b0f4e3c64ed70bce70dd83025d36
 
 # < dxl.hpp >
 
-https://github.com/smHan22/smart-vision/blob/7374f3e2e4e5ad82e6fa7b25be131e2191036ee5/line_tracer/linetracer_real/vision.hpp#L1-L16
+https://github.com/smHan22/smart-vision/blob/42d46b25b047abd7ca1e065197c9d325657db31c/line_tracer/linetracer_real/dxl.hpp#L1-L102
 
 ```
-⦁ 
+⦁ 헤더 파일 보호 메크로 ( #ifndef, #define, #endif )
+
+  - 동일 파일이 여러 번 포함되는 것을 방지합니다.
+
+⦁ 모델 정의 ( MX12W, XC430W150, XL430W250 )
+
+  - Dynamixel 모터의 다양한 모델을 선택할 수 있도록 설정합니다.
+
+⦁ 제어 테이블 주소
+
+  - 각 모델의 다양한 설정에 필요한 메모리 주소들을 정의합니다.
+
+⦁ Dxl 클래스
+
+  - port_num, group_num 등의 멤버 변수를 통해 포트 설정과 그룹 설정을 다룹니다.
+
+  - open()과 close() 메서드를 통해 포트를 열고 닫는 기능을 제공합니다.
+
+  - setVelocity()는 목표 RPM 값을 설정하고, velConvert()는 RPM을 속도 값으로 변환합니다.
+
+  - getch()와 kbhit()은 키보드 입력을 다루는 함수입니다.
 ```
