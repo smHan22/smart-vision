@@ -60,3 +60,17 @@ https://github.com/smHan22/smart-vision/blob/a9e7833dae1de6421bd1a2274e8094e556d
 
     - 중심점 간 에러를 계산하고, 에러에 따라 라인의 위치를 보정
 ```
+
+# < vision.hpp >
+
+https://github.com/smHan22/smart-vision/blob/47c4404289fae067b3a2ccfa4127a90157449ffb/line_tracer/linetracer_real/vision.hpp#L1-L16
+
+```
+⦁ 역할 : vision.cpp에서 정의된 전처리 및 에러 계산 함수를 외부에서 사용할 수 있도록 제공
+
+⦁ 구조
+
+    - preprocessFrame : 프레임 처리
+
+    - calculateError : 중심점 및 에러 계산
+```
