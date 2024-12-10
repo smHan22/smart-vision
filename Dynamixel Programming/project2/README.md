@@ -53,6 +53,7 @@ https://github.com/smHan22/smart-vision/blob/9c4745d5eb99bfcf6488bb400ba049a66ce
 
 # 실행결과
 
+https://youtube.com/shorts/CIZgbmGP2y4
 
 # 문제점
 
