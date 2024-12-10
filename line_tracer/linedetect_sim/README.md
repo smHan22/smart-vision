@@ -109,6 +109,22 @@ https://github.com/smHan22/smart-vision/blob/76225e5e26c2b183d94aceba822725a938d
 ● 실행 시간 및 에러를 출력합니다.
 ```
 
+# Makefile
+
+https://github.com/smHan22/smart-vision/blob/8af4db9f48e1948c89d5c166b7cda39305165c8e/line_tracer/linedetect_sim/Makefile#L1-L12
+
+```ruby
+● CX : 컴파일러 명령어를 지정
+
+● CXFLAGS : 디버깅 정보를 포함하도록 컴파일하고, 모든 경고 메시지를 활성화하여 잠재적인 오류를 발견할 수 있도록 함.
+
+● CVFLAGS : OpenCV 라이브러리의 컴파일 및 링크 옵션을 자동으로 설정
+
+● SRCS : main.cpp 빌드할 소스 코드 파일을 지정
+
+● TARGET : 생성될 실행 파일의 이름
+```
+
 # 동작 영상
 
 https://youtu.be/VNe0moYWk3M
