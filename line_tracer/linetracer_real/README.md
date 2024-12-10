@@ -136,3 +136,11 @@ https://github.com/smHan22/smart-vision/blob/42d46b25b047abd7ca1e065197c9d325657
 
   - getch()와 kbhit()은 키보드 입력을 다루는 함수입니다.
 ```
+
+# < Makefile >
+
+https://github.com/smHan22/smart-vision/blob/8a73953021dff9e5aa956da2ed8fbc2ad2e36d75/line_tracer/linetracer_real/Makefile#L1-L23
+
+```
+⦁
+```
