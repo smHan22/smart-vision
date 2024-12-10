@@ -142,5 +142,57 @@ https://github.com/smHan22/smart-vision/blob/42d46b25b047abd7ca1e065197c9d325657
 https://github.com/smHan22/smart-vision/blob/8a73953021dff9e5aa956da2ed8fbc2ad2e36d75/line_tracer/linetracer_real/Makefile#L1-L23
 
 ```
-⦁
+⦁ CX 변수
+
+  - C++ 컴파일러인 g++를 설정하는 변수입니다.
+
+  - C++ 소스 파일을 컴파일할 때 이 변수를 사용하여 g++로 컴파일합니다.
+
+⦁ CXFLAGS 변수
+
+  - CXFLAGS는 C++ 컴파일 시 사용할 플래그를 설정하는 변수입니다.
+
+  - -g 플래그는 디버깅 정보를 포함시키고, -Wall 플래그는 모든 경고를 표시하도록 합니다.
+
+⦁ DXFLAGS 변수
+
+  - DXFLAGS는 Dynamixel SDK와 관련된 플래그를 설정하는 변수입니다.
+
+  - Dynamixel SDK 헤더 파일의 경로를 포함하고, SDK 라이브러리를 링크합니다.
+
+⦁ CVFLAGS 변수
+
+  - CVFLAGS는 OpenCV와 관련된 플래그를 설정하는 변수입니다.
+
+  - 명령을 사용하여 OpenCV 라이브러리의 컴파일 및 링크 플래그를 자동으로 가져옵니다.
+
+⦁ TARGET 변수
+
+  - TARGET은 최종 실행 파일의 이름을 설정하는 변수입니다. 여기서는 moter_sim으로 설정하였습니다.
+
+⦁ OBJS 변수
+
+  - OBJS는 컴파일된 객체 파일들의 목록입니다. main.o, dxl.o, vision.o 세 개의 객체 파일이 포함됩니다.
+
+⦁ 타겟 만들기 (빌드)
+
+  - $(TARGET) 타겟은 $(OBJS) 객체 파일들을 링크하여 실행 파일을 생성하는 규칙입니다.
+
+  - $(CX) -o $(TARGET) $(OBJS) $(DXLFLAGS) $(CVFLAGS) 명령어는 main.cpp를 컴파일하고 -c 플래그를 사용하여 객체 파일만 생성합니다.
+
+⦁ main.o 타겟
+
+  - main.o는 main.cpp 파일을 컴파일하여 생성되는 객체 파일입니다.
+
+⦁ dxl.o 타겟
+
+  - dxl.o는 dxl.hpp와 dxl.cpp 파일을 컴파일하여 생성되는 객체 파일입니다.
+
+⦁ vision.o 타겟
+
+  - vision.o는 vision.cpp와 vision.hpp 파일을 컴파일하여 생성되는 객체 파일입니다.
+
+⦁ clean 타겟
+
+  - clean 타겟은 빌드 과정에서 생성된 실행 파일과 객체 파일을 삭제하는 명령입니다.
 ```
