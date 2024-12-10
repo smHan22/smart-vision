@@ -199,4 +199,7 @@ https://github.com/smHan22/smart-vision/blob/8a73953021dff9e5aa956da2ed8fbc2ad2e
 
 # 블록도
 
+<img width="810" alt="블록도" src="https://github.com/user-attachments/assets/955c9faa-99fb-48c3-9a7b-b227be7b0be8">
+
+
 # 결과 영상
