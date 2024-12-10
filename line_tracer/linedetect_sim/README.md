@@ -111,7 +111,7 @@ https://github.com/smHan22/smart-vision/blob/76225e5e26c2b183d94aceba822725a938d
 
 # Makefile
 
-https://github.com/smHan22/smart-vision/blob/8af4db9f48e1948c89d5c166b7cda39305165c8e/line_tracer/linedetect_sim/Makefile#L1-L12
+https://github.com/smHan22/smart-vision/blob/92ea3e5c9e9cc9f8365aaafa0a2a05e10e9bdd05/line_tracer/linedetect_sim/Makefile#L1-L5
 
 ```ruby
 ● CX : 컴파일러 명령어를 지정
