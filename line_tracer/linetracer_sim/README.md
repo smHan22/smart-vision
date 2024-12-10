@@ -1,6 +1,6 @@
 # 실행영상
 
-https://youtu.be/uSDSKUINZIs
+https://youtu.be/bKOA_ZvVlF0
 
 # 라인트레이서_모션제어
 
