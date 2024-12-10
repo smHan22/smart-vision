@@ -31,3 +31,32 @@ https://github.com/smHan22/smart-vision/blob/858b1031f2dd84910c28cb426fa494621a9
 
   5. 종료 처리 : 스트림과 모터 연결을 종료 
 ```
+
+# < vision.cpp >
+
+https://github.com/smHan22/smart-vision/blob/a9e7833dae1de6421bd1a2274e8094e556dc4f7e/line_tracer/linetracer_real/vision.cpp#L1-L97
+
+```
+⦁ 역할 : 영상 데이터의 전처리와 라인 중심 게산 및 에러 측정을 처리
+
+⦁ 처리 흐름
+
+  1. preprocessFrame
+    - 프레임을 그레이스케일로 변환
+
+    - 밝기 보정을 통해 일정한 조명 조건 유지
+
+    - 이진화 및 관심 영역 설정으로 하단 1/4 부분을 집중 분석
+
+    - 이진화된 결과를 컬러 이미지로 변환하여 시각적으로 표시
+
+  2. calculateError
+
+    - 연결된 구성 요소를 분석하여 라인의 중심점들을 추출
+
+    - 첫 번째 프레임에서는 이미지 중심과 가장 가까운 라인 중심을 선택
+
+    - 이후 프레임에서는 이전 중심점과 가장 가까운 중심점을 선택
+
+    - 중심점 간 에러를 계산하고, 에러에 따라 라인의 위치를 보정
+```
