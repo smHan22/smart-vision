@@ -2,6 +2,8 @@
 
 ➨ 라인트레이서의 최종 결과물을 소개하겠습니다.
 
+(코드 단위로의 설명은 저번 시간에 다뤘기 때문에, 현재 레포트에서는 흐름 위주로 설명하겠습니다.)
+
 # < main.cpp >
 
 https://github.com/smHan22/smart-vision/blob/858b1031f2dd84910c28cb426fa494621a94de90/line_tracer/linetracer_real/main.cpp#L1-L107
