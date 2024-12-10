@@ -196,3 +196,7 @@ https://github.com/smHan22/smart-vision/blob/8a73953021dff9e5aa956da2ed8fbc2ad2e
 
   - clean 타겟은 빌드 과정에서 생성된 실행 파일과 객체 파일을 삭제하는 명령입니다.
 ```
+
+# 블록도
+
+# 결과 영상
