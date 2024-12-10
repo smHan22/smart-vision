@@ -125,6 +125,23 @@ https://github.com/smHan22/smart-vision/blob/92ea3e5c9e9cc9f8365aaafa0a2a05e10e9
 ● TARGET : 생성될 실행 파일의 이름
 ```
 
+https://github.com/smHan22/smart-vision/blob/6f146509e3370d899aa5e7d9e9562cd2aa6ec372/line_tracer/linedetect_sim/Makefile#L7-L8
+
+```ruby
+● $(TARGET) : camera라는 실행 파일을 의미
+
+● $(SRCS) : 빌드에 필요한 소스 파일을 지정
+
+● $(CX) : C++ 컴파일러인 g++을 호출
+
+● $(CXFLAGS) : 디버깅 및 경고 옵션을 추가
+
+● -o $(TARGET) : 컴파일 결과로 생성될 실행 파일의 이름을 지정
+
+● $(SRCS) : 컴파일할 소스 파일을 전달
+
+● $(CVFLAGS) : OpenCV 관련 헤더 및 라이브러리 설정을 추가
+```
 # 동작 영상
 
 https://youtu.be/VNe0moYWk3M
