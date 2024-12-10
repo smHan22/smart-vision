@@ -1,7 +1,3 @@
-# 실행영상
-
-https://youtu.be/bKOA_ZvVlF0
-
 # 라인트레이서_모션제어
 
 ➨ 지난 시간 라인 검출에 이어서 검출한 라인과 위치오차를 이용하여 속도명령을 설계하는 것을 설명하겠습니다.
@@ -228,3 +224,7 @@ https://github.com/smHan22/smart-vision/blob/ea3010f4b34b136657083e8bc2b7444bb20
 
 ⦁ 빌드된 실행 파일 삭제하는 명령어
 ```
+
+# 실행영상
+
+https://youtu.be/bKOA_ZvVlF0
