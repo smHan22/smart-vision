@@ -49,11 +49,9 @@ https://github.com/smHan22/smart-vision/blob/52e3232308865dd5351182656d5879251bb
 ⦁ calculateError 함수로 라인의 중심을 계산하고 에러 값을 업데이트
 ```
 
-https://github.com/smHan22/smart-vision/blob/ee9d902bbc08834a76789637743c26d6b045122a/line_tracer/linetracer_sim/main.cpp#L75-L87
+https://github.com/smHan22/smart-vision/blob/e1d65e7136efdfa334b16c018f5a4fd3f161bc31/line_tracer/linetracer_sim/main.cpp#L77-L87
 
 ```ruby
-⦁ 라인의 중심점을 기준으로 왼쪽 및 오른쪽 모터의 속도를 계산
-
 ⦁ dxl.kbhit()으로 키 입력을 체크하여 'q'를 입력하면 종료하고, 's'를 입력하면 모터를 작동시킴
 
 ⦁ ctrl_c_pressed가 ture이면 프로그램을 종료
