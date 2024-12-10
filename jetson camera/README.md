@@ -19,7 +19,7 @@
 ```
 
 
-# Makefile 설정
+# Makefile
 
 • Makefile은 프로젝트의 빌드 과정을 자동화하는 파일로, 여러 파일이 포함된 프로젝트를 쉽게 컴파일하고 관리할 수 있도록 함.
 
@@ -37,11 +37,7 @@ SRCS: 컴파일할 소스 파일 목록
 TARGET: 최종적으로 생성할 파일의 이름
 ```  
 
-
-
-
-
-# main.cpp 코드
+# main.cpp
 
 • OpenCV의 TickMeter를 사용하여 각 프레임의 처리 시간을 측정하고, GStreamer와 videocapture, videoWriter를 활용하여 영상을 처리
 
