@@ -203,3 +203,5 @@ https://github.com/smHan22/smart-vision/blob/8a73953021dff9e5aa956da2ed8fbc2ad2e
 
 
 # 결과 영상
+
+https://youtu.be/yD1SiWTWaPY
