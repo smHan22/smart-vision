@@ -6,12 +6,13 @@ void preprocessFrame(const Mat& frame, Mat& binary, Mat& colorBinary) {
     // 그레이스케일 변환
     cvtColor(frame, gray, COLOR_BGR2GRAY);
 
-    // 밝기 보정
     Scalar meanBrightness = mean(gray);
     gray = gray + (100 - meanBrightness[0]);
 
+    GaussianBlur(gray, gray, Size(5, 5), 1.5);
+
     // 이진화
-    threshold(gray, binary, 130, 255, THRESH_BINARY);
+    threshold(gray, binary, 0, 255, THRESH_BINARY | THRESH_OTSU);
 
     // ROI 설정 (하단 4/1 부분)
     Rect roi(0, 270, 640, 90);
